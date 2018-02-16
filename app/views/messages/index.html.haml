@@ -1,0 +1,35 @@
+.wrapper
+  .side-bar
+    .header
+      %h3.header__user-name
+        ユーザー名
+      %ul.header__user-action
+        %li.header__user-action_make-group
+          = link_to "#" do
+            .i.fa.fa-edit
+        %li.header__user-action_edit-user
+          = link_to "#" do
+            .i.fa.fa-cog
+    .groups
+      =render 'group'
+
+  .chat
+    .header
+      .left-header
+        %h4.left-header__group-title
+          グループ1
+        .ul.left-header__group-member
+          Members:
+          .li ユーザー1
+          .li ユーザー2
+          .li ユーザー 3
+      .right-header
+        = link_to "Edit", "#", class: 'right-header__button'
+    .messages
+      =render 'message'
+    .form
+      %form.form__new-message
+        %input.form__new-massage_text{type: "text", placeholder: "type a message" }
+        .form__image
+          %i.fa.fa-image
+        %input.form__send{type: "submit", value: "send"}
