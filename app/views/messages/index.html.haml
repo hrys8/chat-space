@@ -1,0 +1,38 @@
+.notification
+  notification
+
+.wrapper
+  .side-bar
+    .header
+      %h3.header__user-name
+        ユーザー名
+      .header__user-action
+        = link_to "#" do
+          %i.white.fa.fa-edit
+        = link_to "#" do
+          %i.white.fa.fa-cog
+    .groups
+      =render 'group'
+
+  .chat
+    .header
+      .left-header
+        %h4.left-header__group-title
+          グループ1
+        .ul.left-header__group-member
+          Members:
+          .li ユーザー1
+          .li ユーザー2
+          .li ユーザー3
+      .right-header
+        = link_to "Edit", "#", class: 'right-header__button'
+    .messages
+      =render 'message'
+    .form
+      %form.form__new-message
+        %input.form__new-message_text{type: "text", placeholder: "type a message" }
+        .form__mask
+          %label.form__mask_image
+            %input.hide{type: "file"}
+            %i.fa.fa-image
+        %input.form__send{type: "submit", value: "send"}
