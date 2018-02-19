@@ -1,15 +1,6 @@
 .wrapper
-  .side-bar
-    .header
-      %h3.header__user-name
-        = current_user.name
-      .header__user-action
-        = link_to "#" do
-          %i.white.fa.fa-edit
-        = link_to edit_user_path do
-          %i.white.fa.fa-cog
-    .groups
-      =render 'group'
+
+  = render 'side_bar'
 
   .chat
     .header
