@@ -73,38 +73,36 @@
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
-    padding: 20px 50px 20px 40px;
     height: 90px;
-    @include clearfix;
-    &__new-message_text{
+    padding: 20px 50px 20px 40px;
+    &__message {
       border: none;
       float: left;
       height: 50px;
       width: calc(100% - 150px);
-      padding-left: 10px;
     }
     &__mask {
-      background-color: white;
-      padding-right: 10px;
-      height: 50px;
+      background-color: #FFFFFF;
       float: left;
-      &_image{
+      height: 50px;
+      padding-right: 10px;
+      &__image {
         font-size: 20px;
         line-height: 50px;
       }
-      .hide{
+      .hidden {
         display: none;
       }
     }
-    &__send {
+    &__submit {
       background-color: #38AEF0;
       border: none;
+      color: #FFFFFF;
       float: right;
-      color: white;
+      font-size: 16px;
       height: 50px;
       margin-left: 15px;
-      padding: 0 26px;
-      font-size: 16px;
+      padding: 0 30px;
     }
   }
 }
