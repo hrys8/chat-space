@@ -1,29 +1,11 @@
 .message
   .message__upper
     .message__upper_user-name
-      ユーザー1
+      = message.user.name
     .message__upper_time-at
-      0000/00/00 00:00:00
+      = message.created_at.strftime('%Y/%m/%d %T')
   .message__lower
-    .message__lower_text
-      メッセージ1
-
-.message
-  .message__upper
-    .message__upper_user-name
-      ユーザー2
-    .message__upper_time-at
-      0000/00/00 00:00:00
-  .message__lower
-    .message__lower_text
-      メッセージ2
-
-.message
-  .message__upper
-    .message__upper_user-name
-      ユーザー3
-    .message__upper_time-at
-      0000/00/00 00:00:00
-  .message__lower
-    .message__lower_text
-      メッセージ3
+    -- if message.content.present?
+      %p.message__lower_text
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
