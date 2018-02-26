@@ -21,6 +21,13 @@ $(function(){
                 </div>`
     return html;
   }
+
+  function pageRESET(){
+    $('.form__message').val('');
+    $('.hidden').val('');
+    $('.form__submit').prop('disabled', false);
+  };
+
   $('#form_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -36,13 +43,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message').val('');
-      $('.hidden').val('');
-      $('.form__submit').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
+      pageRESET()
     })
     .fail(function(){
-    alert('error');
+      alert('error');
+      pageRESET()
     });
   });
 });
