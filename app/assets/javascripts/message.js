@@ -39,6 +39,7 @@ $(function(){
       $('.form__message').val('');
       $('.hidden').val('');
       $('.form__submit').prop('disabled', false);
-    })
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
+    });
   });
 });
