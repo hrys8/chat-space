@@ -40,9 +40,9 @@ $(function(){
       $('.hidden').val('');
       $('.form__submit').prop('disabled', false);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
-    });
+    })
     .fail(function(){
-+      alert('error');
+    alert('error');
     });
   });
 });
