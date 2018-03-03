@@ -31,7 +31,7 @@ $(function(){
     $(this).parent().remove();
   });
 
-  $("#user-search-field").on("keyup", function(){
+  $("#user-search-field").on("keypress", function(){
     var input = $("#user-search-field").val();
     $.ajax({
       type: 'GET',
