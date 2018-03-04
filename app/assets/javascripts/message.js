@@ -51,11 +51,10 @@ $(function(){
       pageRESET()
     });
   });
-});
 
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/[\d]{1,}\/messages/)){
-      var message_id = $('.messages').children('.message').last().data('id');
+      var message_id = $('.messages').children('.message').last().data('message-id');
       $.ajax({
         url: location.href,
         type: 'GET',
@@ -65,8 +64,8 @@ $(function(){
       .done(function(data) {
         data.forEach(function(message) {
           var html = buildHTML(message);
-          $('messages').append(html)
-          $('messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
+          $('.messages').append(html);
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500, 'swing');
         })
       })
       .fail(function(){
@@ -77,4 +76,4 @@ $(function(){
       clearInterval(interval);
       }
   }, 5000);
-
+});
